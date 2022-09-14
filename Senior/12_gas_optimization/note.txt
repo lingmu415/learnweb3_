@@ -1,0 +1,6 @@
+uint の並び順に気を付ける。256(32bytes)で1slotなので、uint8を4つ並べてpackageにできる
+できるだけstorageではなくmemoryを使う。ループ内とか
+配列は固定長の方がいい。uint[2] public arrなど
+publicはmemoryをコピーし、externalはcalldataなので後者の方が安くなる
+関数内では変数は16こまでしか宣言できないので、modifierを組み合わせると良い
+storageを保存しない、libraryも積極的に使うとよい
